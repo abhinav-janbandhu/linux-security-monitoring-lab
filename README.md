@@ -4,13 +4,7 @@
 
 This project documents a Linux Security Monitoring and Incident Investigation home lab built using Ubuntu and Kali Linux.
 
-The objective was to gain hands-on experience with:
-
-* Linux auditing using auditd
-* File integrity monitoring
-* Privileged command monitoring
-* Authentication monitoring
-* Incident investigation techniques
+The objective was to gain hands-on experience with Linux auditing, authentication monitoring, privileged activity monitoring, file integrity monitoring, and basic incident investigation techniques commonly used by security operations teams.
 
 ---
 
@@ -21,12 +15,14 @@ The objective was to gain hands-on experience with:
 * Target system
 * auditd enabled
 * SSH enabled
+* Authentication and system logs analyzed
 
 ### Kali Linux
 
 * Client system
-* SSH testing
-* Authentication testing
+* SSH connectivity testing
+* Failed and successful login simulation
+* Activity generation for investigation exercises
 
 ---
 
@@ -34,31 +30,34 @@ The objective was to gain hands-on experience with:
 
 ### Auditd Monitoring
 
+* Configured auditd monitoring
 * Created audit rules
-* Monitored sensitive files
-* Generated audit events
+* Generated and reviewed audit events
 
 ### File Integrity Monitoring
 
-* Tracked changes to critical files
+* Monitored changes to sensitive files
 * Reviewed audit logs
+* Investigated file modification events
 
 ### Privileged Command Monitoring
 
 * Monitored sudo activity
 * Investigated privileged actions
+* Reviewed authentication and privilege escalation logs
 
 ### Authentication Monitoring
 
-* Analyzed failed logins
+* Analyzed failed login attempts
 * Investigated successful SSH logins
-* Reviewed authentication logs
+* Reviewed login history and authentication events
 
 ### Incident Investigation
 
 * Correlated multiple log sources
-* Reviewed authentication events
-* Investigated file modifications
+* Reviewed authentication activity
+* Investigated privileged user actions
+* Analyzed file modification events
 * Produced findings and conclusions
 
 ---
@@ -73,17 +72,19 @@ lastb
 who
 grep "Failed password" /var/log/auth.log
 grep "Accepted password" /var/log/auth.log
+grep sudo /var/log/auth.log
 ```
 
 ---
 
 ## Key Learnings
 
-* How Linux auditing works
-* How authentication events are recorded
-* How to investigate suspicious activity
-* How security analysts collect evidence from logs
-* Importance of monitoring privileged actions
+* Understanding how Linux auditing works with auditd
+* Monitoring authentication activity and login events
+* Investigating failed and successful SSH access attempts
+* Tracking privileged user activity
+* Collecting and correlating evidence from multiple log sources
+* Applying basic incident investigation techniques on Linux systems
 
 ---
 
@@ -91,13 +92,16 @@ grep "Accepted password" /var/log/auth.log
 
 * Splunk integration
 * Centralized log collection
-* Detection engineering
-* Security dashboards
+* Detection engineering use cases
+* Security dashboards and reporting
 * Alerting and automation
+* SIEM-based monitoring and investigations
+
+---
 
 ## Screenshots
 
-The `screenshots` folder contains evidence collected during the lab exercises:
+The `screenshots` folder contains evidence collected during the lab exercises, including:
 
 * Auditd service verification
 * Audit rule creation
@@ -107,5 +111,4 @@ The `screenshots` folder contains evidence collected during the lab exercises:
 * Privileged activity investigation
 * Login history analysis
 
-These screenshots demonstrate Linux auditing, authentication monitoring, file integrity monitoring, and incident investigation techniques performed during the home lab exercises.
-
+These screenshots demonstrate Linux auditing, authentication monitoring, file integrity monitoring, privileged activity monitoring, and incident investigation techniques performed during the home lab exercises.
