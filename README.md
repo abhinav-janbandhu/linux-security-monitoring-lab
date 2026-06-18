@@ -94,3 +94,18 @@ grep "Accepted password" /var/log/auth.log
 * Detection engineering
 * Security dashboards
 * Alerting and automation
+
+## Screenshots
+
+The `screenshots` folder contains evidence collected during the lab exercises:
+
+* Auditd service verification
+* Audit rule creation
+* File change detection
+* Failed SSH login detection
+* Successful SSH login detection
+* Privileged activity investigation
+* Login history analysis
+
+These screenshots demonstrate Linux auditing, authentication monitoring, file integrity monitoring, and incident investigation techniques performed during the home lab exercises.
+
